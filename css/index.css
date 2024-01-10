@@ -15,7 +15,7 @@ color: rgb(26,25,24);
 }
 .experience-list li{
    color: rgb(175,29,194);
-margin-top: 1.5em;
+margin: 1.5em;
 
 } 
 
@@ -30,7 +30,6 @@ margin-top: 1.5em;
 .message_form textarea{
     font-size: 14px;
     padding: 10px;
-    margin-top: 1.5em; 
     
 }
 .message_form button{
@@ -41,4 +40,15 @@ margin-top: 1.5em;
 footer{
     padding: 10px; 
     background-color: rgb(217,208,209)
+} 
+.experience-list{
+    display: flex; 
+}
+.message_form{
+    display: flex;
+} 
+@media screen and (min-width:400px) and (max-width: 768px) {
+    .experience-list{
+        display: block; 
+    }
 }
