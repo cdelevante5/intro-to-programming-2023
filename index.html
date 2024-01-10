@@ -6,12 +6,18 @@
     <title>Cynthia Delevante </title> 
     <link rel="stylesheet" href="css/index.css"></link>
 </head>
-<body>
-    <section>   
+<body> 
+    <div> <a href="#about">ABOUT</a>
+        <a href="#experience">EXPERIENCE</a>
+        <a href="#skills">SKILLS</a>
+        <a href="#connect">CONNECT</a>
+    
+    </div>
+    <section id="about">   
         <h2>"About" </h2> 
         <p>My is Cynthia. I am 27 years old. </p>  
     </section> 
-    <section>
+    <section id="experience">
         <h2>"Experience" </h2> 
         <ul class="experience-list" >
        <li>Hospital </li> 
@@ -25,6 +31,7 @@
    <h2> skills </h2>
    <ul class="skills-list"></ul> 
 </section> 
+<section id="connect"> 
 
       <h2>"Connect" </h2> 
       <p>https://github.com/cdelevante5/intro-to-programming-2023/tree/main</p> 
@@ -32,16 +39,23 @@
    <section> 
     <h2> "Leave a Message" </h2> 
     <form name="leave_message" class="message_form">
+<div>
 
+    
   <label for="usersName">usersName</label>      
  <input name="usersName" type="text" required=true></input> 
+</div>
 
-
+<div>
  <label>usersEmail</label>
  <input name="usersEmail" type="email" required=true></input>
-<br>
+<br> 
+</div>
+
+<div>
  <label> usersMessage</label>
  <textarea name="usersMessage" required=true></textarea>  
+</div>
 
  <button type="submit">submit</button>
 
