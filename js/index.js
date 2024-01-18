@@ -30,9 +30,6 @@ let usersName= event.target.usersName.value
 let usersEmail= event.target.usersEmail.value
 let usersMessage = event.target.usersMessage.value
 console.log("hello", usersName, usersEmail, usersMessage)
-
-}); 
-
 let messageSection = document.getElementById ('messages');
 let messageList = messageSection.querySelector('ul');
 let newMessage = document.createElement('li') ;
@@ -54,4 +51,29 @@ newMessage.innerHTML=
 
   messageList.append(newMessage);
   newMessage.appendChild(removeButton) ;
-  event.target.reset ();
+  event.target.reset (); 
+}); 
+
+
+
+  var githubRequest = new XMLHttpRequest();
+  githubRequest.open('GET', 'https://api.github.com/users/cdelevante5/repos'); 
+  githubRequest.send(); 
+
+  githubRequest.addEventListener('load', function(event){ 
+    var repositories = JSON.parse(this.response) 
+    console.log(repositories)
+
+    var projectSection= document.getElementById("projects") 
+    var projectList = projectSection.querySelector("ul")
+
+for (var i=0; i<repositories.length; i+=1) {
+  var project= document.createElement("li")
+  project.innerText = repositories[i]['name']
+  projectList.appendChild (project)
+}
+  }) 
+
+
+
+  
