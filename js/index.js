@@ -56,13 +56,14 @@ newMessage.innerHTML=
 
 
 
-  var githubRequest = new XMLHttpRequest();
-  githubRequest.open('GET', 'https://api.github.com/users/cdelevante5/repos'); 
-  githubRequest.send(); 
+  
 
-  githubRequest.addEventListener('load', function(event){ 
-    var repositories = JSON.parse(this.response) 
-    console.log(repositories)
+fetch('https://api.github.com/users/cdelevante5/repos') 
+ .then(function(response){
+  return response.json()
+ }) 
+.then(function(repositories) {
+
 
     var projectSection= document.getElementById("projects") 
     var projectList = projectSection.querySelector("ul")
@@ -72,8 +73,5 @@ for (var i=0; i<repositories.length; i+=1) {
   project.innerText = repositories[i]['name']
   projectList.appendChild (project)
 }
-  }) 
-
-
-
+})
   
