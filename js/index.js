@@ -33,7 +33,7 @@ console.log("hello", usersName, usersEmail, usersMessage)
 let messageSection = document.getElementById ('messages');
 let messageList = messageSection.querySelector('ul');
 let newMessage = document.createElement('li') ;
-
+console.log(messageList)
 newMessage.innerHTML=  
 `
     <a href="mailto:${usersEmail}">${usersName}</a>
@@ -69,8 +69,11 @@ fetch('https://api.github.com/users/cdelevante5/repos')
     var projectList = projectSection.querySelector("ul")
 
 for (var i=0; i<repositories.length; i+=1) {
-  var project= document.createElement("li")
-  project.innerText = repositories[i]['name']
+  var project= document.createElement("li") 
+var link = document.createElement('a')
+link.href=repositories[i]['html_url']
+  link.innerText = repositories[i]['name']
+  project.appendChild(link)
   projectList.appendChild (project)
 }
 })
